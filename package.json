@@ -1,6 +1,7 @@
 {
   "name": "sigstore",
   "version": "1.0.0",
+  "description": "sign. verify. protect. Make sure your software is what it claims to be.",
   "private": true,
   "scripts": {
     "dev": "nuxt",

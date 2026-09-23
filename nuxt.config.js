@@ -116,7 +116,7 @@ export default {
 
   sitemap: {
     path: '/sitemap.xml',
-    hostname: process.env.VUE_APP_FRONTEND,
+    hostname: process.env.VUE_APP_FRONTEND || 'https://sigstore.dev',
     generate: true,
     cacheTime: 86400,
     trailingSlash: true
@@ -127,8 +127,15 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    // Set explicitly; otherwise the PWA module falls back to npm_package_description,
+    // which is derived from the first line of README.md and breaks link previews.
+    meta: {
+      name: 'Sigstore',
+      description: 'sign. verify. protect. Make sure your software is what it claims to be.'
+    },
     manifest: {
-      lang: 'en'
+      lang: 'en',
+      description: 'sign. verify. protect. Make sure your software is what it claims to be.'
     }
   },
 
